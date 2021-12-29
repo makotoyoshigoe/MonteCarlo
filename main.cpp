@@ -5,19 +5,7 @@
 #include<time.h>
 #include<stdlib.h>
 #include<math.h>
-
-class MonteCarlo{
-    private:
-        double R; //半径
-        int n; //試行回数
-    public:
-        MonteCarlo(int N); //コンストラクタ
-        ~MonteCarlo(){};
-        double gen_rand(); // 乱数生成
-        int judge_within_circle(); // 円内にあるか判定
-        int cnt_point(); // 円内にある点を数える
-        double calc_pi(); // 円周率を計算
-};
+#include"MonteCalro.h"
 
 MonteCarlo::MonteCarlo(int N){
     this->n = N;
@@ -48,7 +36,7 @@ double MonteCarlo::calc_pi(){
     return pi;
 }
 
-// メイン処理
+// // メイン処理
 int main(void){
     MonteCarlo mc1(10e3);
     srand((unsigned)time(NULL)); //シード値生成
